@@ -1,0 +1,41 @@
+defaultAirflowTag: "2.3.0"
+airflowVersion: "2.3.0"
+executor: "KubernetesExecutor"
+env:
+  - name: AIRFLOW__LOGGING__REMOTE_LOGGING
+    value: 'True'
+  - name: AIRFLOW__LOGGING__REMOTE_BASE_LOG_FOLDER
+    value: 's3://airflow-puc/logs/'
+  - name: AIRFLOW__LOGGING__REMOTE_LOG_CONN_ID
+    value: 'my_aws'
+webserver:
+  defaultUser:
+    enabled: true
+    role: Admin
+    username: CaiqueDeveloper
+    email: caique.vieira@bhfdata.com.br
+    firstName: Caique
+    lastName: Santos
+    password: admin
+  service:
+    type: LoadBalancer
+
+redis:
+  enabled: false
+
+dags:
+  gitSync:
+    enabled: true
+    repo: https://github.com/caiquevieirachq/Trabalho_final_eng_dados
+    branch: main
+    rev: HEAD
+    depth: 1
+    maxFailures: 0
+    subPath: "dags"
+    wait: 30
+    containerName: git-sync
+    uid: 65533
+    securityContext: {}
+    extraVolumeMounts: []
+    env: []
+    resources: {}
