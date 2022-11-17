@@ -68,7 +68,6 @@ def indicadores_businessImdb():
                 'TerminationProtected': False,
                 'Ec2SubnetId': 'subnet-0091abc2305ce8b35'
             },
-            },
 
             Applications=[{'Name': 'Spark'}],
         )
