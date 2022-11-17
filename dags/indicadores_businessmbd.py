@@ -64,9 +64,10 @@ def indicadores_businessImdb():
                         'InstanceCount': 1,
                     }
                 ],
-                'Ec2KeyName': 'Evelyn-teste',
                 'KeepJobFlowAliveWhenNoSteps': True,
-                'TerminationProtected': False
+                'TerminationProtected': False,
+                'Ec2SubnetId': 'subnet-0091abc2305ce8b35'
+            },
             },
 
             Applications=[{'Name': 'Spark'}],
