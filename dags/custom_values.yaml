@@ -12,7 +12,7 @@ webserver:
   defaultUser:
     enabled: true
     role: Admin
-    username: CaiqueDeveloper
+    username: admin
     email: caique.vieira@bhfdata.com.br
     firstName: Caique
     lastName: Santos
