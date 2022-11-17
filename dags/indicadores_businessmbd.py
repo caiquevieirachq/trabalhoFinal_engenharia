@@ -38,7 +38,7 @@ def indicadores_businessImdb():
             ServiceRole='EMR_DefaultRole',
             JobFlowRole='EMR_EC2_DefaultRole',
             VisibleToAllUsers=True,
-            LogUri='s3://emr-256240406578/elasticmapreduce/',
+            LogUri='s3://airflow-puc/logs/emr-logs/',
             ReleaseLabel='emr-6.8.0',
             Instances={
                 'InstanceGroups': [
@@ -67,7 +67,7 @@ def indicadores_businessImdb():
                 'Ec2KeyName': 'Evelyn-teste',
                 'KeepJobFlowAliveWhenNoSteps': True,
                 'TerminationProtected': False,
-                'Ec2SubnetId': 'subnet-00709a3ade46a24c7'
+                'Ec2SubnetId': 'subnet-0dad379901d5589d8'
             },
 
             Applications=[{'Name': 'Spark'}],
@@ -100,7 +100,7 @@ def indicadores_businessImdb():
                             'Args': ['spark-submit',
                                      '--master', 'yarn',
                                      '--deploy-mode', 'cluster',
-                                     's3://emr-256240406578/code/business_imdb.py'
+                                     's3://airflow-puc/files/business_imdb.py'
                                      ]
                     }
                 }
