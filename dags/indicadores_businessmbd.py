@@ -92,14 +92,14 @@ def indicadores_businessImdb():
             JobFlowId=cid,
             Steps=[
                 {
-                    'Name': 'Business',
+                    'Name': 'Dataset Transformation',
                     'ActionOnFailure': "CONTINUE",
                     'HadoopJarStep': {
                             'Jar': 'command-runner.jar',
                             'Args': ['spark-submit',
                                      '--master', 'yarn',
                                      '--deploy-mode', 'cluster',
-                                     's3://airflow-puc/files/business_imdb.py'
+                                     's3://airflow-puc/files/dataset_transformation.py'
                                      ]
                     }
                 }
